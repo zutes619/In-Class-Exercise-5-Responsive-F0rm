@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    background-color: red;
+}
+
+main {
+    margin: 0 auto;
+    border: 1px solid #aaa;
+}
+
+header {
+    background-image: url("1.png");
+    background-size: 100% auto;
+    background-position: center center;
+}
+
+header h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    padding: 1rem 1rem;
+    text-shadow: 2px 2px 4px #835A59;
+    vertical-align: top;
+    text-align: right;
+    min-height: 12rem;
+}
+
+header img {}
+
+form {
+    padding: 1rem 1rem 2rem;
+}
+
+.form-box {
+    padding: 0.25rem 0 1rem;
+}
+
+label {
+    display: block;
+    margin: 0;
+    font-size: 20;
+    color: black;
+}
+
+input {
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    width: 100%;
+    color: #835A59;
+}
+
+input#min.price::after,
+input.price#max::after {
+    content: "$" attr(data-price);
+    display: block;
+    margin-top: -1.5rem;
+    color: #835A59;
+}
+
+.search-btn {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.25rem 1rem;
+    background-color: #D16641;
+    color: #fff;
+}
+
+@media all and (min-width:650px) {
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .form-box {
+        flex-basis: 100%;
+    }
+    .form-box.check-in,
+    .form-box.check-out,
+    .form-box.min-price,
+    .form-box.max-price,
+    .form-box.dogs,
+    .form-box.search {
+        flex-basis: 50%;
+    }
+    .form-box.search {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .form-box.dogs,
+    .form-box.min-price,
+    .form-box.max-price {
+        padding-right: 1rem;
+    }
+}
+
+@media all and (min-width:1000px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        max-width: 1200px;
+    }
+    header {
+        flex-basis: 30%;
+        background-size: auto 100%;
+    }
+    form {
+        flex-basis: 70%;
+    }
+}
